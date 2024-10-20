@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    src: url(../assets/fonts/Inter-Bold.ttf);
+    font-family: 'Inter-Bold';
+}
+
+@font-face {
+    src: url(../assets/fonts/Inter-Regular.ttf);
+    font-family: 'Inter-Regular';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter-Bold';
+}
+
+a, p, button {
+    font-family: 'Inter-Regular';
+}
