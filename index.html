@@ -10,5 +10,37 @@
 </head>
 <body>
     
+    <form action="front.js" method="post">
+        <div>
+            <label for="id">ID del Autor:</label>
+            <input type="text" id="id" name="id" placeholder="Ingrese el id del autor" required>
+        </div>
+
+        <div>
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Ingrese el título" required>
+        </div>
+
+        <div>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" placeholder="Ingrese la fecha del post" required>
+        </div>
+
+        <div>
+            <label for="contenido">Contenido:</label>
+            <input type="text" id="contenido" name="contenido" placeholder="Ingrese el contenido del post" required>
+        </div>
+
+        <div>
+            <label for="idObtenerPost">Obtener un Post específico:</label>
+            <input type="number" id="idObtenerPost" name="obtenerPost" placeholder="Ingrese el ID del post a buscar">
+        </div>
+
+    </form>
+
+    <button class="btn-listar-posts" id="botonListarPosts" type="submit">Obtener todos los Posts</button>
+    <button class="btn-obtener-post" id="botonObtenerPost" type="submit">Obtener un solo Post</button>
+    <button class="btn-crear-post" id="botonCrearPost" type="submit">Crear un Post</button>
+
 </body>
 </html>

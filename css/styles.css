@@ -14,10 +14,10 @@
     font-family: 'Inter-Regular';
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, button {
     font-family: 'Inter-Bold';
 }
 
-a, p, button {
+a, p {
     font-family: 'Inter-Regular';
 }
