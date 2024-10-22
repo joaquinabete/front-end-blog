@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 @font-face {
     src: url(../assets/fonts/Inter-Bold.ttf);
     font-family: 'Inter-Bold';
@@ -20,4 +28,32 @@ h1, h2, h3, h4, h5, h6, button {
 
 a, p {
     font-family: 'Inter-Regular';
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.form__field {
+
+}
+
+.form__field-label {
+
+}
+
+.form__field-input {
+
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+}
+
+.buttons__accion {
+
 }
