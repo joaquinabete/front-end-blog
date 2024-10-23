@@ -38,12 +38,17 @@ $(document).ready(function () {
     });
 
     $("#botonCrearPost").click(function() {
-        var datosFormulario = {
-            "id_autor" : $("#id").val(),
-            "titulo" : $("#titulo").val(),
-            "fecha" : $("#fecha").val(),
-            "contenido" : $("#contenido").val()
-        };
+        var id_autor = $("#id_autor").val();
+        var titulo = $("#titulo").val();
+        var fecha = $("#fecha").val();
+        var contenido = $("#contenido").val();
+        
+        var datos = {
+            "id_autor" : id_autor,
+            "titulo" : titulo,
+            "fecha" : fecha,
+            "contenido" : contenido,
+        }
 
         $.ajax({
             url: 'http://127.0.0.1:8001/api/posts',
@@ -52,7 +57,7 @@ $(document).ready(function () {
                 "Accept": "application/json",
                 "Content-Type" : "application/json",
             },
-            data: JSON.stringify(datosFormulario),
+            data: JSON.stringify(datos),
 
             success: function (data) {
                 console.log(data);
