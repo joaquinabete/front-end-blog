@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#botonListarPosts").click(function(){  
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/posts', 
+            url: 'http://127.0.0.1:8001/api/posts', 
             type: 'GET',
             headers: {
                 "Accept": "application/json",
@@ -20,7 +20,7 @@ $(document).ready(function () {
     $("#botonObtenerPost").click(function() {
         var id = $("#idObtenerPost").val();
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/posts/' + id,
+            url: 'http://127.0.0.1:8001/api/posts/' + id,
             type: 'GET',
             headers: {
                 "Accept": "application/json",
@@ -46,7 +46,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/posts',
+            url: 'http://127.0.0.1:8001/api/posts',
             type: 'POST',
             headers: {
                 "Accept": "application/json",
@@ -64,6 +64,5 @@ $(document).ready(function () {
             } 
         })
     });
-
 
 });
