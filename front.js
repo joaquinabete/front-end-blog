@@ -63,6 +63,15 @@ $(document).ready(function () {
                 console.log(data);
                 alert('¡Se creo el Post perfectamente!');
 
+                var nuevoPost = $("#cardsTemplate").clone();
+                nuevoPost.removeAttr("card__id"); 
+                nuevoPost.find(".card__title").text(data.titulo);
+                nuevoPost.find(".card__date").text(`Autor: ${data.id_autor} | Fecha: ${data.fecha}`);
+                nuevoPost.find(".card__content").text(data.contenido);
+                nuevoPost.show();
+
+                $("#postContainer").append(nuevoPost);
+
             },
             error: function () {
                 alert('No se ha podido crear el Post');
@@ -71,3 +80,5 @@ $(document).ready(function () {
     });
 
 });
+
+
