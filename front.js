@@ -49,7 +49,7 @@ $(document).ready(function () {
             "fecha" : fecha,
             "contenido" : contenido,
         }
-
+        
         $.ajax({
             url: 'http://127.0.0.1:8001/api/posts',
             type: 'POST',
@@ -58,19 +58,20 @@ $(document).ready(function () {
                 "Content-Type" : "application/json",
             },
             data: JSON.stringify(datos),
-
+            
             success: function (data) {
+                $(location).prop('href', '/post.html');
                 console.log(data);
                 alert('¡Se creo el Post perfectamente!');
-
+                
                 var nuevoPost = $("#cardsTemplate").clone();
-                nuevoPost.removeAttr("card__id"); 
+                nuevoPost.removeAttr(".card__id"); 
                 nuevoPost.find(".card__title").text(data.titulo);
                 nuevoPost.find(".card__date").text(`Autor: ${data.id_autor} | Fecha: ${data.fecha}`);
                 nuevoPost.find(".card__content").text(data.contenido);
                 nuevoPost.show();
 
-                $("#postContainer").append(nuevoPost);
+                $("#postContainer").append(nuevoPost); 
 
             },
             error: function () {
