@@ -60,8 +60,9 @@ $(document).ready(function () {
             data: JSON.stringify(datos),
             
             success: function (data) {
-                console.log(data);
+                console.log("Datos recibidos: ", data);
                 alert('¡Se creo el Post perfectamente!');
+                localStorage.setItem('postData', JSON.stringify(data));
                 $(location).prop('href', '/post.html');
 
             },

@@ -7,18 +7,38 @@
 </head>
 <body>
 
-    <section id="postContainer">
-        <article id="cardsTemplate" class="cards">
-            <div class="card__header">
-                <p class="card__id"></p>
-                <h3 class="card__title"></h3>
-                <p class="card__date"></p>
+    <section id="postContainer" class="card">
+        <article class="card__container">
+            <div class="card__container-header">
+                <p class="card__container-id"></p>
+                <h3 class="card__container-title"></h3>
+                <p class="card__container-date"></p>
             </div>
-            <div class="card__body">
-                <p class="card__content"></p>
+            <div class="card__container-post">
+                <p class="card__container-content"></p>
             </div>
         </article>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Recuperar los datos del post desde localStorage
+            const postData = JSON.parse(localStorage.getItem('postData'));
+    
+            // Si hay datos disponibles, mostrar en la página
+            if (postData) {
+                document.querySelector(".card__container-id").textContent = "ID del Autor: " + postData.post.id_autor;
+                document.querySelector(".card__container-title").textContent = "Titulo del Post: " +postData.post.titulo;
+                document.querySelector(".card__container-date").textContent = "Fecha del Post: " + postData.post.fecha;
+                document.querySelector(".card__container-content").textContent = "Contenido del Post: " + postData.post.contenido;
+                
+                // Limpiar el localStorage para evitar que los datos se queden almacenados
+                localStorage.removeItem('postData');
+            } else {
+                document.querySelector("#postContainer").textContent = "No hay datos del post para mostrar.";
+            }
+        });
+    </script>
     
 
 </body>
