@@ -3,46 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="./front.js"></script>
-    <title>Front-End Blog</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <title>BLOG de Posts</title>
 </head>
 <body>
-
-    <section class="form">
-        <article class="form__container">
-            <div class="form__container-field">
-                <label class="form__container-field-label" for="id">ID del Autor:</label>
-                <input class="form__container-field-input" type="text" id="id_autor" name="id_autor" placeholder="Ingrese el id del autor" required>
+    
+    <section id="postContainer" class="card">
+        <article class="card__container">
+            <div class="card__container-header">
+                <p class="card__container-id"></p>
+                <h3 class="card__container-title"></h3>
+                <p class="card__container-date"></p>
             </div>
-
-            <div class="form__container-field">
-                <label class="form__container-field-label" for="titulo">Título:</label>
-                <input class="form__container-field-input" type="text" id="titulo" name="titulo" placeholder="Ingrese el título" required>
-            </div>
-
-            <div class="form__container-field">
-                <label class="form__container-field-label" for="fecha">Fecha:</label>
-                <input class="form__container-field-input" type="date" id="fecha" name="fecha" placeholder="Ingrese la fecha del post" required>
-            </div>
-
-            <div class="form__container-field">
-                <label class="form__container-field-label" for="contenido">Contenido:</label>
-                <input class="form__container-field-input" type="text" id="contenido" name="contenido" placeholder="Ingrese el contenido del post" required>
-            </div>
-
-            <div class="form__container-field">
-                <label class="form__container-field-label" for="idObtenerPost">Obtener un Post específico:</label>
-                <input class="form__container-field-input" type="number" id="idObtenerPost" name="obtenerPost" placeholder="Ingrese el ID del post a buscar">
-            </div>
-
-            <div class="form__container-buttons">
-                <button class="form__container-buttons-action" id="botonListarPosts">Obtener todos los Posts</button>
-                <button class="form__container-buttons-action" id="botonObtenerPost">Obtener un solo Post</button>
-                <button class="form__container-buttons-action" id="botonCrearPost">Crear un Post</button>
+            <div class="card__container-post">
+                <p class="card__container-content"></p>
             </div>
         </article>
-    </section> 
+    </section>
+    <a href="./posts-crear.html">Crea un nuevo Post aquí</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Recuperar los datos del post desde localStorage
+            const postData = JSON.parse(localStorage.getItem('postData'));
+    
+            // Si hay datos disponibles, mostrar en la página
+            if (postData) {
+                document.querySelector(".card__container-id").textContent = "ID del Autor: " + postData.post.id_autor;
+                document.querySelector(".card__container-title").textContent = "Titulo del Post: " +postData.post.titulo;
+                document.querySelector(".card__container-date").textContent = "Fecha del Post: " + postData.post.fecha;
+                document.querySelector(".card__container-content").textContent = "Contenido del Post: " + postData.post.contenido;
+                
+                // Limpiar el localStorage para evitar que los datos se queden almacenados
+                localStorage.removeItem('postData');
+            } else {
+                document.querySelector("#postContainer").textContent = "No hay datos del post para mostrar.";
+            }
+        });
+    </script>
+
 </body>
 </html>

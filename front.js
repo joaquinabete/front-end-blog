@@ -62,9 +62,6 @@ $(document).ready(function () {
             success: function (data) {
                 console.log("Datos recibidos: ", data);
                 alert('¡Se creo el Post perfectamente!');
-                localStorage.setItem('postData', JSON.stringify(data));
-                $(location).prop('href', '/post.html');
-
             },
             error: function () {
                 alert('No se ha podido crear el Post');
@@ -73,5 +70,3 @@ $(document).ready(function () {
     });
 
 });
-
-
