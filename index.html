@@ -21,26 +21,5 @@
         </article>
     </section>
     <a href="./posts-crear.html">Crea un nuevo Post aquí</a>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Recuperar los datos del post desde localStorage
-            const postData = JSON.parse(localStorage.getItem('postData'));
-    
-            // Si hay datos disponibles, mostrar en la página
-            if (postData) {
-                document.querySelector(".card__container-id").textContent = "ID del Autor: " + postData.post.id_autor;
-                document.querySelector(".card__container-title").textContent = "Titulo del Post: " +postData.post.titulo;
-                document.querySelector(".card__container-date").textContent = "Fecha del Post: " + postData.post.fecha;
-                document.querySelector(".card__container-content").textContent = "Contenido del Post: " + postData.post.contenido;
-                
-                // Limpiar el localStorage para evitar que los datos se queden almacenados
-                localStorage.removeItem('postData');
-            } else {
-                document.querySelector("#postContainer").textContent = "No hay datos del post para mostrar.";
-            }
-        });
-    </script>
-
 </body>
 </html>
