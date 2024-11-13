@@ -1,20 +1,19 @@
 $(document).ready(function () {
-    $("#botonListarPosts").click(function () {
-        $.ajax({
-            url: 'http://127.0.0.1:8001/api/posts',
-            type: 'GET',
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",
-            },
-            success: function (data) {
-                console.log(data);
-                alert("¡Todos los Posts han sido obtenidos con éxito!");
-            },
-            error: function () {
-                alert("No se ha encontrado ningún Post publicado");
-            }
-        });
+    $.ajax({
+        url: 'http://127.0.0.1:8001/api/posts',
+        type: 'GET',
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        },
+        success: function (data) {
+            $.each(data, function(i, item) {
+                $("#postContainer").append(data[i].titulo + " - " + data[i].fecha + " - " + data[i].contenido);
+            });
+        },
+        error: function () {
+            alert("No se ha encontrado ningún Post publicado");
+        }
     });
 
     $("#botonObtenerPost").click(function () {
@@ -29,7 +28,6 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 alert('¡Has obtenido el Post que buscabas!');
-
             },
             error: function () {
                 alert('No se encontro el post buscado');
