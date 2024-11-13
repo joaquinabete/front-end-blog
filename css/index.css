@@ -30,6 +30,10 @@ a, p {
     font-family: 'Inter-Regular';
 }
 
+.titulo-error {
+    color: red;
+}
+
 .form {
     display: flex;
     flex-direction: row;

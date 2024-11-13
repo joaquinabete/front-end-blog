@@ -12,27 +12,9 @@ $(document).ready(function () {
             });
         },
         error: function () {
-            alert("No se ha encontrado ningún Post publicado");
+            let noPostsMessage = $("#noPostsMessage");
+            $("#noPostmessage").text("No se encuentran posts disponibles");
         }
-    });
-
-    $("#botonObtenerPost").click(function () {
-        var id = $("#idObtenerPost").val();
-        $.ajax({
-            url: 'http://127.0.0.1:8001/api/posts/' + id,
-            type: 'GET',
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",
-            },
-            success: function (data) {
-                console.log(data);
-                alert('¡Has obtenido el Post que buscabas!');
-            },
-            error: function () {
-                alert('No se encontro el post buscado');
-            }
-        })
     });
 
     function redirigirIndex() {
