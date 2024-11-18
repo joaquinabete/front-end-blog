@@ -7,8 +7,9 @@ $(document).ready(function () {
             "Content-Type": "application/json",
         },
         success: function (data) { 
-            $.each(data, function(i, item) {
-                $("#postsContainer").append(data[i].titulo + " - " + data[i].fecha + " - " + data[i].contenido);
+            console.log(data.posts);
+            $.each(data.posts, function(i, item) {
+                $("#postsContainer").append(estilosPosts(item));
             });
         },
         error: function () {
@@ -17,7 +18,6 @@ $(document).ready(function () {
         }
     });
     
-
     $("#botonCrearPost").click(function () {
         var id_autor = $("#id_autor").val();
         var titulo = $("#titulo").val();
@@ -25,10 +25,10 @@ $(document).ready(function () {
         var contenido = $("#contenido").val();
 
         var datos = {
-            "id_autor": id_autor,
-            "titulo": titulo,
-            "fecha": fecha,
-            "contenido": contenido,
+            "id_autor" : id_autor,
+            "titulo" : titulo,
+            "fecha" : fecha,
+            "contenido" : contenido,
         }
 
         $.ajax({
@@ -42,13 +42,24 @@ $(document).ready(function () {
 
             success: function (data) {
                 console.log("Datos recibidos: ", data);
-                alert('¡Se creo el Post perfectamente!');
+                $("#postsContainer").append(estilosPosts(datos));       
             },
-            error: function () {
+            error: function (err) {
                 alert('No se ha podido crear el Post');
+                console.log(err);
             }
         })
     });
     
+    function estilosPosts(posts) {
+        return `
+            <article class="card__container">
+                <h3 class="card__container-title">Titulo: ${posts.titulo}</h3>
+                <p class="card__container-date">Fecha: ${posts.fecha}</p>
+                <p class="card__container-content">Contenido: ${posts.contenido}</p>
+            </article>
+        `
+    }
+
 });
 
