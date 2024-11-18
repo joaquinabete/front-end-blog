@@ -5,12 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="./front.js"></script>
+    <script src="./posts.js"></script>
     <title>BLOG de Posts</title>
 </head>
 <body>
 
-   <section id="postContainer" class="card">
+    <div id="postsContainer"></div>
+    
+    <h2>Bienvenido a mi Blog, enterate de todas las novedades</h2>
+        <article class="form">
+            <div class="form__field">
+                <label class="form__field-label" for="titulo">Título:</label>
+                <input class="form__field-input" type="text" id="titulo" name="titulo" placeholder="Ingrese el título" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__field-label" for="fecha">Fecha:</label>
+                <input class="form__field-input" type="date" id="fecha" name="fecha" placeholder="Ingrese la fecha del post" required>
+            </div>
+
+            <div class="form__field">
+                <label class="form__field-label" for="contenido">Contenido:</label>
+                <input class="form__field-input" type="text" id="contenido" name="contenido" placeholder="Ingrese el contenido del post" required>
+            </div>
+
+            <div class="form__buttons">
+                <button class="form__buttons-action" id="botonCrearPost">¡Crear Post ahora!</button> 
+            </div>
+        </article>
+    </section> 
+    <h3 class="titulo-error" id="noPostsmessage"></h3>
+
+ <!--  <section id="postsContainer" class="card">
         
         <article class="card__container">
             <div class="card__container-header">
@@ -22,9 +48,8 @@
                 <p class="card__container-content"></p>
             </div>
         </article>
-
-    </section>    
-        <h3 class="titulo-error" id="noPostmessage"></h3>
-    <a href="./posts-crear.html">Crea un nuevo Post aquí</a>
+    </section> --> 
+    <button id="registro">Registrate para crear nuevos Posts en el Blog!</button>
+        
 </body>
 </html>
