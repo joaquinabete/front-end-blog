@@ -10,14 +10,20 @@
 </head>
 <body>
 
+    <header class="header"> 
+        <article class="header__container">
+            <h1 class="header__title">Bienvenido a mi Blog, enterate de todas las novedades hoy mismo</h1>
+            <a class="header__button" href="./pages/registro.html">Click Aquí para Registrarte</a>
+        </article>
+    </header>        
+        
     <main class="main">
-        <h1>Bienvenido a mi Blog, enterate de todas las novedades hoy mismo</h1>
-    
-        <h3>Obvserva todos los Posts que han sido publicados:</h3>
-
+    <section class="main__container">
+        <h3 class="main__container-title">Obvserva todos tus Posts Aquí</h3>
         <div id="postsContainer" class="card__posts"></div>
         <h3 class="titulo-error" id="noPostsmessage"></h3>
-        <a href="./pages/formulario-posts.html">Haz click aquí para crear un nuevo Post en el Blog!</a>
+        <a class="button-redirect-form" href="./pages/crear-posts.html">Haz click aquí para crear un nuevo Post en el Blog!</a>
+    </section>
     </main>
 </body>
 </html>

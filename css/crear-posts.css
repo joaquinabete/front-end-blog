@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    src: url(../assets/fonts/Inter-Bold.ttf);
+    font-family: 'Inter-Bold';
+}
+
+@font-face {
+    src: url(../assets/fonts/Inter-Regular.ttf);
+    font-family: 'Inter-Regular';
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form__title {
+    font-family: 'Inter-Bold';
+    font-size: 24px;
+}
+
+.form__container {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form__fields {
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form__fields-label {
+    font-size: 16px;
+    font-family: 'Inter-Regular';
+}
+
+.form__fields-input {
+    border: 4px solid black;
+    border-radius: 7px;
+    padding: 4px;   
+}
+
+.form__container-button {
+    padding: 8px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Inter-Regular';
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 12px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(207, 111, 0);
+}
+
+.volver-index {
+    font-family: 'Inter-Bold';
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 7px;
+    border: 3px solid #000000;
+    color: white; 
+    background: #000000;
+}

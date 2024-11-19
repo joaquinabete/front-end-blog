@@ -19,7 +19,7 @@ $(document).ready(function () {
     });
 
     function redirigirIndex() {
-        window.location.href = "index.html"
+        window.location.href = "../index.html"
     }
     
     $("#botonCrearPost").click(function () {
@@ -59,6 +59,7 @@ $(document).ready(function () {
     function estilosPosts(posts) {
         return `
             <article class="card__container">
+                <p class="card__container-id">Publicación número ${posts.id_autor} existosa</p>
                 <h3 class="card__container-title">Titulo: ${posts.titulo}</h3>
                 <p class="card__container-date">Fecha: ${posts.fecha}</p>
                 <p class="card__container-content">Contenido: ${posts.contenido}</p>
