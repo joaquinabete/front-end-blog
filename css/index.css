@@ -22,64 +22,45 @@ a, p {
     font-family: 'Inter-Regular';
 }
 
-.titulo-error {
-    color: red;
-}
-
-.form {
+.main {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    max-width: 300px;
-    gap: 8px;
-    border: 1px solid black;    
-}
-
-.form__container-field {
-
-}
-
-.form__field-label {
-
-}
-
-.form__field-input {
-
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-}
-
-.buttons__accion {
-
+    gap: 20px;
+    margin: 20px;
 }
 
 .card__posts {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 12px;
-    border: 3px solid;
+    gap: 40px;
+    padding: 20px;
+    border: 5px solid black;
 }
 
 .card__container {
-    width: 16em;
+    width: 48rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px;
     border: 3px solid red;
 }
 
 .card__container-title {
-    color: red;
+    color: rgb(7, 145, 2);
     font-size: 24px;
 }
 
 .card__container-date {
-    color: green;
+    color: rgb(24, 30, 107);
 }
 
 .card__container-content {
-    color: yellow;
+    color: rgb(23, 11, 51);
+}
+
+.titulo-error {
+    color: red;
 }

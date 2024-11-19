@@ -17,6 +17,10 @@ $(document).ready(function () {
             $("#noPostsmessage").text("No se encuentran posts disponibles");
         }
     });
+
+    function redirigirIndex() {
+        window.location.href = "index.html"
+    }
     
     $("#botonCrearPost").click(function () {
         var id_autor = $("#id_autor").val();
@@ -42,7 +46,8 @@ $(document).ready(function () {
 
             success: function (data) {
                 console.log("Datos recibidos: ", data);
-                $("#postsContainer").append(estilosPosts(datos));       
+                $("#postsContainer").append(estilosPosts(datos)); 
+                redirigirIndex();      
             },
             error: function (err) {
                 alert('No se ha podido crear el Post');

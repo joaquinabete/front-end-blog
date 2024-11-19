@@ -10,32 +10,14 @@
 </head>
 <body>
 
-    <div id="postsContainer" class="card__posts"></div>
+    <main class="main">
+        <h1>Bienvenido a mi Blog, enterate de todas las novedades hoy mismo</h1>
+    
+        <h3>Obvserva todos los Posts que han sido publicados:</h3>
 
-    <h2>Bienvenido a mi Blog, enterate de todas las novedades</h2>
-        <article class="form">
-            <div class="form__field">
-                <label class="form__field-label" for="titulo">Título:</label>
-                <input class="form__field-input" type="text" id="titulo" name="titulo" placeholder="Ingrese el título" required>
-            </div>
-
-            <div class="form__field">
-                <label class="form__field-label" for="fecha">Fecha:</label>
-                <input class="form__field-input" type="date" id="fecha" name="fecha" placeholder="Ingrese la fecha del post" required>
-            </div>
-
-            <div class="form__field">
-                <label class="form__field-label" for="contenido">Contenido:</label>
-                <input class="form__field-input" type="text" id="contenido" name="contenido" placeholder="Ingrese el contenido del post" required>
-            </div>
-
-            <div class="form__buttons">
-                <button class="form__buttons-action" id="botonCrearPost">¡Crear Post ahora!</button> 
-            </div>
-        </article>
-    </section> 
-    <h3 class="titulo-error" id="noPostsmessage"></h3>
-    <button id="registro">Registrate para crear nuevos Posts en el Blog!</button>
-        
+        <div id="postsContainer" class="card__posts"></div>
+        <h3 class="titulo-error" id="noPostsmessage"></h3>
+        <a href="./pages/formulario-posts.html">Haz click aquí para crear un nuevo Post en el Blog!</a>
+    </main>
 </body>
 </html>

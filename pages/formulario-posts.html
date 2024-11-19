@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/registro.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/posts.js"></script>
+    <title>Formulario de Posts</title>
+</head>
+<body>
+    
+    <section class="form">
+        <article class="form__container">
+            <h3 class="form__title">Crea tu Post aquí</h3>
+            <div class="form__fields">
+                <label class="form__fields-label" for="titulo">Título:</label>
+                <input class="form__fields-input" type="text" id="titulo" name="titulo" placeholder="Ingrese el título" required>
+                <label class="form__fields-label" for="fecha">Fecha:</label>
+                <input class="form__fields-input" type="date" id="fecha" name="fecha" placeholder="Ingrese la fecha del post" required>
+                <label class="form__fields-label" for="contenido">Contenido:</label>
+                <input class="form__fields-input" type="text" id="contenido" name="contenido" placeholder="Ingrese el contenido del post" required>
+            </div>
+            <button class="form__container-button" id="botonCrearPost">¡Crear Post ahora!</button> 
+        </article>
+    </section>
+
+    <a class="volver-index" href="../index.html">Volver al inicio</a>
+
+</body>
+</html>
