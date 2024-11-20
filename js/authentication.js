@@ -12,11 +12,11 @@ $(document).ready(function(){
             "username": username,
             "password": password,
             "grant_type" : "password",
-            "client_id" : 8,
-            "client_secret" : "tAgDsH2aSCfEUqUwFUlDqK3uKaaNipERmmqGEeA2"
+            "client_id" : 3,
+            "client_secret" : "VZ0ywM4t1e8XfzbuH8r9INKYXxYKXv1yMjifgoT5"
         }
         jQuery.ajax({  
-            url: 'http://localhost:8000/oauth/token',  
+            url: 'http://localhost:8002/oauth/token',  
             type: 'POST',
             headers: {
                 "Accept" : "application/json",
